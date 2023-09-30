@@ -1,0 +1,71 @@
+#VRML V2.0 utf8 
+
+Background {
+     backUrl "fon.jpg"
+     frontUrl "fon.jpg"
+     leftUrl "fon.jpg"
+     rightUrl "fon.jpg"
+}
+
+Viewpoint {
+     fieldOfView 1
+     jump TRUE
+     orientation 0 0 1 0
+     position 6 0 15
+     description "VIEW1"
+}
+
+Transform {
+     translation 6 4 6
+     children [
+          DEF L SpotLight {
+               radius 150
+               color 1 0.2 0.2
+               intensity 20
+               on FALSE
+          }
+     ]
+}
+
+DEF DOM Transform {
+     translation 0 0 0
+     rotation 0 1 0 1.57
+     children [
+          DEF S SphereSensor {}
+          DEF TS TouchSensor {}
+          Inline {
+               load TRUE
+               url ["scena3.wrl"]
+          }
+     ]
+}
+
+
+ROUTE TS.isActive_changed TO L.set_on
+
+DEF GNOM Transform {
+     translation 10 0 0
+     rotation 0 1 0 1.57
+     children [
+          DEF PS PlaneSensor {}
+          Inline {
+               load TRUE
+               url ["scena2.wrl"]
+          }
+     ]
+}
+
+DEF TS TimeSensor {
+    cycleInterval 2.0
+    loop TRUE
+}
+DEF PI PositionInterpolator {
+    key [ 0.0 0.7 1.0 ]
+    keyValue [  1.0 1.0 1.0
+                1.5 1.5 1.5
+                1.0 1.0 1.0 ]
+}
+ROUTE S.rotation_changed TO GNOM.set_rotation
+ROUTE PS.translation_changed TO GNOM.set_translation
+ROUTE TS.fraction_changed TO PI.set_fraction
+ROUTE PI.value_changed TO GNOM.set_scale

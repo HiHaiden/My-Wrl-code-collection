@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' profile='Full' version='3.0' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <Scene DEF='scene'>
+    <Viewpoint description='V1' position='4 1 13' fieldOfView='1'/>
+    <DirectionalLight intensity='7' direction='0 4 3'/>
+    <Transform translation='10 2 -2'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='1 0.6 1'/>
+          <ImageTexture url='"tex.jpg"'/>
+        </Appearance>
+        <Sphere radius='4'/>
+      </Shape>
+    </Transform>
+    <Transform translation='6 -2 4'>
+      <Shape>
+        <Text string='"Tsapenko Danil KMD-19"' maxExtent='100'/>
+      </Shape>
+    </Transform>
+    <Group>
+      <Transform DEF='H4' translation='0 3 0'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0.8 2 0.8'/>
+          </Appearance>
+          <Cylinder height='5' radius='0.4'/>
+        </Shape>
+        <Transform translation='0 2 0'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='1 1 1'/>
+            </Appearance>
+            <Sphere/>
+          </Shape>
+        </Transform>
+      </Transform>
+      <Transform rotation='1 0 1 1.8' translation='0 -0.6 0'>
+        <Transform USE='H4'/>
+      </Transform>
+      <Transform rotation='1 0 0 -1.8' translation='0 -0.6 0'>
+        <Transform USE='H4'/>
+      </Transform>
+      <Transform rotation='1 0 -1 1.8' translation='0 -0.6 0'>
+        <Transform USE='H4'/>
+      </Transform>
+      <Transform>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='1 0 1'/>
+          </Appearance>
+          <Sphere radius='2'/>
+        </Shape>
+      </Transform>
+    </Group>
+    <Viewpoint description='V2' position='0 0 7' fieldOfView='1'/>
+    <PointLight color='0.7 1 0' intensity='10' location='5 -4 -3'/>
+    <PointLight color='1 0.5 1' intensity='13' location='-3 6 1'/>
+  </Scene>
+</X3D>

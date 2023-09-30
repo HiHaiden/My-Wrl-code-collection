@@ -1,0 +1,73 @@
+<html> 
+        <head> 
+            <title>Laba1</title>   
+            <meta charset="utf-8">    
+            <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
+            <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+        </head> 
+        <body> 
+<h1>Цапенко Данил. КМД-19</h1> 
+            <h1>Лабораторная работа №1</h1> 
+<h1>На тему: Использование базовых средств языка X3D/VRML для разработки статистических сцен СВР</h1>
+            <a href="scena1.wrl">Часть 1</a>
+            <p>
+            <a href="scena4.wrl">Часть 2</a>
+            <x3d width='800px' height='600px'> 
+              <Scene DEF='scene'>
+
+                <Transform translation='10 2 -2'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='1 0.5 1'/>
+                    </Appearance>
+                    <Sphere radius='4'/>
+                  </Shape>
+                </Transform>
+                <Transform translation='6 -2 4'>
+                  <Shape>
+                    <Text string='"Tsapenko Danil KMD-19"' maxExtent='100'/>
+                  </Shape>
+                </Transform>
+                <Group>
+                  <Transform DEF='H4' translation='0 3 0'>
+                    <Shape>
+                      <Appearance>
+                        <Material diffuseColor='0.8 1 0.8'/>
+                      </Appearance>
+                      <Cylinder height='4' radius='0.3'/>
+                    </Shape>
+                    <Transform translation='0 2 0'>
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='0 0 1'/>
+                        </Appearance>
+                        <Sphere/>
+                      </Shape>
+                    </Transform>
+                  </Transform>
+                  <Transform rotation='1 0 1 1.8' translation='0 -0.5 0'>
+                    <Transform USE='H4'/>
+                  </Transform>
+                  <Transform rotation='1 0 0 -1.8' translation='0 -0.5 0'>
+                    <Transform USE='H4'/>
+                  </Transform>
+                  <Transform rotation='1 0 -1 1.8' translation='0 -0.5 0'>
+                    <Transform USE='H4'/>
+                  </Transform>
+                  <Transform>
+                    <Shape>
+                      <Appearance>
+                        <Material diffuseColor='1 0 0'/>
+                      </Appearance>
+                      <Sphere radius='2'/>
+                    </Shape>
+                  </Transform>
+                </Group>
+                <Viewpoint description='V2' position='0 0 7' fieldOfView='1'/>
+                <PointLight color='0.7 1 0' intensity='10' location='5 -4 -3'/>
+                <PointLight color='1 0.5 1' intensity='13' location='-3 6 1'/>
+              </Scene>
+            </x3d> 
+        </body> 
+</html>         
+ 

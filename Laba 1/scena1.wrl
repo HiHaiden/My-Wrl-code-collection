@@ -1,0 +1,130 @@
+#VRML V2.0 utf8  
+
+Viewpoint {
+     fieldOfView 1
+     jump TRUE
+     position 4 1 13
+     description "V1"
+}
+
+DirectionalLight {
+     color 1 1 1
+     direction 0 4 3
+     intensity 7
+     on TRUE
+}
+
+Background {
+     backUrl "fon.jpg"
+     frontUrl "fon.jpg"
+     leftUrl "fon.jpg"
+     rightUrl "fon.jpg"
+     topUrl "fon.jpg"
+     bottomUrl "fon.jpg"
+}
+
+Transform {
+     translation 10 2 -2
+     children [
+          Shape {
+               geometry Sphere { radius 4 }
+               appearance Appearance { 
+                    material Material {diffuseColor 1 0.5 1 } 
+                    texture ImageTexture {url "bri.jpg"}
+               }
+          }
+     ]
+}
+
+Transform {
+     translation 6 -2 4
+     children [
+          Shape {
+               geometry Text {
+                    string ["Tsapenko Danil KMD-19"]
+                    maxExtent 100
+               }
+          }
+     ]
+}
+
+Group {
+     children [
+          DEF H4 Transform { 
+               translation 0 3 0
+               children [
+                    Shape {
+                         geometry Cylinder {
+                              height  6
+                              radius  0.5
+                         }
+                         appearance Appearance { 
+                              material Material { diffuseColor 0.4 1 0.4 } 
+                         } 
+                    }
+                    Transform { 
+                         translation 0 3 0
+                         children [
+                              Shape {
+                                   geometry Sphere { radius 1 }
+                                   appearance Appearance { 
+                                        material Material { diffuseColor 1 0 1 } 
+                                   }
+                              }
+                         ]
+                    }
+               ]
+          }
+          Transform {
+               translation 0 -0.6 0
+               rotation 1 0 1 1.80
+               children [USE H4]
+          }
+          Transform {
+               translation 0 -0.6 0
+               rotation 1 0 0 -1.80
+               children [USE H4]
+          }
+          Transform {
+               translation 0 -0.6 0
+               rotation 1 0 -1 1.80
+               children [USE H4]
+          }
+          Transform { 
+               translation 0 0 0
+               children [
+                    Shape {
+                         geometry Sphere { radius 2 }
+                         appearance Appearance { 
+                              material Material {
+                              diffuseColor 1 0 1 } 
+                         }
+                    }
+               ]
+          }
+     ]
+}
+
+Viewpoint {
+     fieldOfView 1
+     jump TRUE
+     position 0 0 7
+     description "V2"
+}
+
+PointLight {
+     color 0.7 1 0
+     intensity 10
+     location 5 -4 -3
+     on TRUE
+     radius 100
+}
+
+PointLight {
+     color 1 0.5 1
+     intensity 13
+     location -3 6 1
+     on TRUE
+     radius 100
+}
+

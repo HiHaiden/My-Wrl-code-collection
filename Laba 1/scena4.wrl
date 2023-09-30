@@ -1,0 +1,23 @@
+#VRML V2.0 utf8  
+
+Transform {
+     translation 0 0 0
+     children [Inline {
+     load TRUE
+     url ["scena2.wrl"]
+     bboxCenter 0 0 0
+     bboxSize -1 -1 -1
+}
+]
+}
+
+Transform {
+     translation -10 0 2
+     children [Inline {
+     load TRUE
+     url ["scena3.wrl"]
+     bboxCenter 0 0 0
+     bboxSize -1 -1 -1
+}
+]
+}
